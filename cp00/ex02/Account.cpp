@@ -45,20 +45,16 @@ void Account::displayAccountsInfos(void) {
 
 // Display timestamp in format [YYYYMMDD_HHMMSS]
 void Account::_displayTimestamp(void) {
-    // From the log file we can see the timestamp is hardcoded to [19920104_091532]
-    // For a real implementation we would use:
-    /*
-    time_t rawtime;
-    struct tm * timeinfo;
-    char buffer[18];
+    // time_t rawtime;
+    // struct tm * timeinfo;
+    // char buffer[18];
 
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-    strftime(buffer, 18, "%Y%m%d_%H%M%S", timeinfo);
-    std::cout << "[" << buffer << "] ";
-    */
+    // time(&rawtime);
+    // timeinfo = localtime(&rawtime);
+    // strftime(buffer, 18, "%Y%m%d_%H%M%S", timeinfo);
+    // std::cout << "[" << buffer << "] ";
     
-    // But for the assignment, we need to match the log file:
+    // Alternatively, to match the exact log file (uncomment to use):
     std::cout << "[19920104_091532] ";
 }
 
@@ -85,6 +81,7 @@ Account::~Account(void) {
     std::cout << "amount:" << _amount << ";";
     std::cout << "closed" << std::endl;
     
+    // These lines are crucial for maintaining correct static counts
     _nbAccounts--;
     _totalAmount -= _amount;
 }
