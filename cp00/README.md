@@ -1,7 +1,4 @@
 
-Now, here's the README for the cpp00 module:
-
-```markdown name=cpp00/README.md
 # CPP00 - Introduction to C++
 
 This module introduces the basic concepts of C++ programming. It focuses on namespaces, classes, member functions, stdio streams, initialization lists, static and const variables, and other basic C++ functionalities.
