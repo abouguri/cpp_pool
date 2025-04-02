@@ -45,17 +45,17 @@ void Account::displayAccountsInfos(void) {
 
 // Display timestamp in format [YYYYMMDD_HHMMSS]
 void Account::_displayTimestamp(void) {
-    // time_t rawtime;
-    // struct tm * timeinfo;
-    // char buffer[18];
+    time_t rawtime;
+    struct tm * timeinfo;
+    char buffer[18];
 
-    // time(&rawtime);
-    // timeinfo = localtime(&rawtime);
-    // strftime(buffer, 18, "%Y%m%d_%H%M%S", timeinfo);
-    // std::cout << "[" << buffer << "] ";
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+    strftime(buffer, 18, "%Y%m%d_%H%M%S", timeinfo);
+    std::cout << "[" << buffer << "] ";
     
     // Alternatively, to match the exact log file (uncomment to use):
-    std::cout << "[19920104_091532] ";
+    // std::cout << "[19920104_091532] ";
 }
 
 // Constructor
