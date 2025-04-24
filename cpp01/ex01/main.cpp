@@ -10,7 +10,8 @@ int main()
     
     Zombie* horde = zombieHorde(N, baseName);
     
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         std::cout << "Zombie #" << i + 1 << ": ";
         horde[i].announce();
     }
