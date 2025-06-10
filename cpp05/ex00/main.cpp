@@ -2,7 +2,6 @@
 #include <iostream>
 
 int main() {
-    // Test 1: Valid bureaucrat creation
     std::cout << "---- Test 1: Valid Bureaucrat Creation ----" << std::endl;
     try {
         Bureaucrat b1("John", 50);
@@ -12,7 +11,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Test 2: Grade too high
     std::cout << "---- Test 2: Grade Too High ----" << std::endl;
     try {
         Bureaucrat b2("Alice", 0);
@@ -22,7 +20,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Test 3: Grade too low
     std::cout << "---- Test 3: Grade Too Low ----" << std::endl;
     try {
         Bureaucrat b3("Bob", 151);
@@ -32,7 +29,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Test 4: Increment grade
     std::cout << "---- Test 4: Increment Grade ----" << std::endl;
     try {
         Bureaucrat b4("Charlie", 10);
@@ -44,7 +40,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Test 5: Decrement grade
     std::cout << "---- Test 5: Decrement Grade ----" << std::endl;
     try {
         Bureaucrat b5("Diana", 140);
@@ -56,7 +51,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Test 6: Increment to invalid grade
     std::cout << "---- Test 6: Increment To Invalid Grade ----" << std::endl;
     try {
         Bureaucrat b6("Eve", 1);
@@ -68,7 +62,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Test 7: Decrement to invalid grade
     std::cout << "---- Test 7: Decrement To Invalid Grade ----" << std::endl;
     try {
         Bureaucrat b7("Frank", 150);
@@ -80,7 +73,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Test 8: Copy constructor
     std::cout << "---- Test 8: Copy Constructor ----" << std::endl;
     try {
         Bureaucrat b8("Grace", 42);
@@ -92,7 +84,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Test 9: Assignment operator
     std::cout << "---- Test 9: Assignment Operator ----" << std::endl;
     try {
         Bureaucrat b9("Harry", 75);
