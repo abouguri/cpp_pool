@@ -1,12 +1,10 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-// Default constructor
 Form::Form() : name("Default Form"), isSigned(false), gradeToSign(150), gradeToExecute(150) {
     std::cout << "Form default constructor called" << std::endl;
 }
 
-// Parameterized constructor
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute) 
     : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
     std::cout << "Form parameterized constructor called" << std::endl;
@@ -19,30 +17,24 @@ Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
     }
 }
 
-// Copy constructor
 Form::Form(const Form &other) 
     : name(other.name), isSigned(other.isSigned), 
       gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute) {
     std::cout << "Form copy constructor called" << std::endl;
 }
 
-// Assignment operator
 Form &Form::operator=(const Form &other) {
     std::cout << "Form assignment operator called" << std::endl;
     if (this != &other) {
-        // Cannot assign to const members
-        // Assign only the non-const member
         this->isSigned = other.isSigned;
     }
     return *this;
 }
 
-// Destructor
 Form::~Form() {
     std::cout << "Form destructor called" << std::endl;
 }
 
-// Getters
 std::string Form::getName() const {
     return this->name;
 }
@@ -59,7 +51,6 @@ int Form::getGradeToExecute() const {
     return this->gradeToExecute;
 }
 
-// Member functions
 void Form::beSigned(const Bureaucrat &bureaucrat) {
     if (bureaucrat.getGrade() <= this->gradeToSign) {
         this->isSigned = true;
@@ -68,7 +59,6 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
     }
 }
 
-// Exception implementations
 const char *Form::GradeTooHighException::what() const throw() {
     return "Form grade is too high, cannot exceed grade 1";
 }
@@ -77,7 +67,6 @@ const char *Form::GradeTooLowException::what() const throw() {
     return "Form grade is too low, cannot be below grade 150";
 }
 
-// Insertion operator overload
 std::ostream &operator<<(std::ostream &os, const Form &form) {
     os << "Form: " << form.getName() 
        << ", signed: " << (form.getIsSigned() ? "yes" : "no") 

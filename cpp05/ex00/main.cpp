@@ -55,7 +55,7 @@ int main() {
     try {
         Bureaucrat b6("Eve", 1);
         std::cout << "Before increment: " << b6 << std::endl;
-        b6.incrementGrade(); // This should throw an exception
+        b6.incrementGrade(); // exception
         std::cout << "After increment: " << b6 << std::endl;
     } catch (std::exception &e) {
         std::cout << "Exception: " << e.what() << std::endl;
@@ -66,7 +66,7 @@ int main() {
     try {
         Bureaucrat b7("Frank", 150);
         std::cout << "Before decrement: " << b7 << std::endl;
-        b7.decrementGrade(); // This should throw an exception
+        b7.decrementGrade(); // exception
         std::cout << "After decrement: " << b7 << std::endl;
     } catch (std::exception &e) {
         std::cout << "Exception: " << e.what() << std::endl;

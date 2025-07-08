@@ -8,34 +8,28 @@
 int main() {
     std::cout << "---- Testing Intern Class ----" << std::endl;
     try {
-        // Create an intern
         Intern someRandomIntern;
         
-        // Create bureaucrat
         Bureaucrat boss("Big Boss", 1);
         
-        // Test creating robotomy request form
         std::cout << "\n--- Creating Robotomy Request Form ---\n" << std::endl;
         AForm* rrf = someRandomIntern.makeForm("robotomy request", "Bender");
         boss.signForm(*rrf);
         boss.executeForm(*rrf);
         delete rrf;
         
-        // Test creating shrubbery creation form
         std::cout << "\n--- Creating Shrubbery Creation Form ---\n" << std::endl;
         AForm* scf = someRandomIntern.makeForm("shrubbery creation", "Garden");
         boss.signForm(*scf);
         boss.executeForm(*scf);
         delete scf;
         
-        // Test creating presidential pardon form
         std::cout << "\n--- Creating Presidential Pardon Form ---\n" << std::endl;
         AForm* ppf = someRandomIntern.makeForm("presidential pardon", "Arthur Dent");
         boss.signForm(*ppf);
         boss.executeForm(*ppf);
         delete ppf;
         
-        // Test creating an unknown form
         std::cout << "\n--- Creating Unknown Form (should fail) ---\n" << std::endl;
         AForm* unknown = someRandomIntern.makeForm("coffee making", "Kitchen");
         boss.signForm(*unknown);
@@ -45,7 +39,6 @@ int main() {
         std::cout << "Exception: " << e.what() << std::endl;
     }
     
-    // Test case sensitivity
     std::cout << "\n---- Testing Case Insensitivity ----" << std::endl;
     try {
         Intern intern;
@@ -59,7 +52,6 @@ int main() {
         std::cout << "Exception: " << e.what() << std::endl;
     }
     
-    // Test Intern copying and assignment
     std::cout << "\n---- Testing Intern Copying ----" << std::endl;
     try {
         Intern original;

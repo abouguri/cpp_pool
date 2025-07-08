@@ -1,25 +1,21 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-// Default constructor
 ShrubberyCreationForm::ShrubberyCreationForm() 
     : AForm("Shrubbery Creation", 145, 137), target("default") {
     std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 
-// Parameterized constructor
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) 
     : AForm("Shrubbery Creation", 145, 137), target(target) {
     std::cout << "ShrubberyCreationForm parameterized constructor called" << std::endl;
 }
 
-// Copy constructor
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) 
     : AForm(other), target(other.target) {
     std::cout << "ShrubberyCreationForm copy constructor called" << std::endl;
 }
 
-// Assignment operator
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
     std::cout << "ShrubberyCreationForm assignment operator called" << std::endl;
     if (this != &other) {
@@ -29,14 +25,11 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
     return *this;
 }
 
-// Destructor
 ShrubberyCreationForm::~ShrubberyCreationForm() {
     std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-// Execute function
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-    // Check if the form is signed and if the executor's grade is high enough
     if (!this->getIsSigned()) {
         throw AForm::FormNotSignedException();
     }
@@ -44,7 +37,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
         throw AForm::GradeTooLowException();
     }
 
-    // Create the output file
     std::string filename = this->target + "_shrubbery";
     std::ofstream outfile(filename.c_str());
     
@@ -53,7 +45,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
         return;
     }
 
-    // ASCII trees
     outfile << "      /\\      " << std::endl;
     outfile << "     /\\*\\     " << std::endl;
     outfile << "    /\\O\\*\\    " << std::endl;
