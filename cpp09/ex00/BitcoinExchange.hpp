@@ -1,4 +1,3 @@
-
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
 
@@ -27,13 +26,11 @@ public:
     void loadDatabase(const std::string& filename);
     void processInputFile(const std::string& filename);
     
-    // Helper methods
     bool isValidDate(const std::string& date) const;
     bool isValidValue(const float value) const;
     std::string findClosestDate(const std::string& date) const;
     float getRate(const std::string& date) const;
 
-    // Exception classes
     class FileOpenException : public std::exception {
     public:
         virtual const char* what() const throw() { return "Error: could not open file."; }
